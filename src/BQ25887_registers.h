@@ -50,13 +50,13 @@ enum BQ25887_REGISTERS {
 };
 
 
-enum REG2B_BAL_MASK_VALUES {
-    CB_MASK = 0x20,
-    HS_CV_MASK = 0x10,
-    LS_CV_MASK = 0x08,
-    HS_OV_MASK = 0x04,
-    LS_OV_MASK = 0x02,
-    CB_OC_MASK = 0x01
+enum REG2B_BAL_MASK_FLAG_VALUES {
+    CB = 0x20,
+    HS_CV = 0x10,
+    LS_CV = 0x08,
+    HS_OV = 0x04,
+    LS_OV = 0x02,
+    CB_OC = 0x01
 };
 
 typedef union {
