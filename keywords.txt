@@ -1,0 +1,3 @@
+BQ25887	KEYWORD1
+Balance Charger	KEYWORD1
+Battery Charger	KEYWORD1
