@@ -105,6 +105,13 @@ REG06_CHGCTL2_TYPE BQ25887::getChargerControl2(){
     return result;
 };
 
+
+void BQ25887::resetWatchdog(){
+    REG07_CHGCTL3_TYPE curr;
+    curr.reg = readI2C(BQ25887_REGISTERS::REG07_CHGCTL3);
+    curr.WD_RST = 1;
+    writeI2C(BQ25887_REGISTERS::REG07_CHGCTL3, curr.reg);
+};
 void BQ25887::setChargerControl3(REG07_CHGCTL3_TYPE value){
     writeI2C(BQ25887_REGISTERS::REG07_CHGCTL3, value.reg);
 };

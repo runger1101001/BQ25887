@@ -35,6 +35,7 @@ class BQ25887 {
         void setChargerControl2(REG06_CHGCTL2_TYPE value);
         REG06_CHGCTL2_TYPE getChargerControl2();
 
+        void resetWatchdog();
         void setChargerControl3(REG07_CHGCTL3_TYPE value);
         REG07_CHGCTL3_TYPE getChargerControl3();
 
