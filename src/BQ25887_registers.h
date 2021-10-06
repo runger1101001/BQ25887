@@ -1,0 +1,79 @@
+
+#ifndef _BQ25887_REGISTERS_H_
+#define _BQ25887_REGISTERS_H_
+
+enum BQ25887_REGISTERS {
+    REG00_VCELLREG = 0x00,
+    REG01_ICHG = 0x01,
+    REG02_VINDPM = 0x02,
+    REG03_IINDPM = 0x03,
+    REG04_IPRECHG_ITERM = 0x04,
+    REG05_CHGCTL1 = 0x05,
+    REG06_CHGCTL2 = 0x06,
+    REG07_CHGCTL3 = 0x07,
+    REG08_CHGCTL4 = 0x08,
+    REG0A_ICO_ILIM = 0x0A,
+    REG0B_STATUS1 = 0x0B,
+    REG0C_STATUS2 = 0x0C,
+    REG0D_NTC_STATUS = 0x0D,
+    REG0E_FAULT_STATUS = 0x0E,
+    REG0F_CHG_FLAG1 = 0x0F,
+    REG10_CHG_FLAG2 = 0x10,
+    REG11_FAULT_FLAG = 0x11,
+    REG12_CHG_MASK1 = 0x12,
+    REG13_CHG_MASK2 = 0x13,
+    REG14_FAULT_MASK = 0x14,
+    REG15_ADC_CTL = 0x15,
+    REG16_ADC_DISABLE = 0x16,
+    REG17_IBUS_ADC1 = 0x17,
+    REG18_IBUS_ADC0 = 0x18,
+    REG19_ICHG_ADC1 = 0x19,
+    REG1A_ICHG_ADC0 = 0x1A,
+    REG1B_VBUS_ADC1 = 0x1B,
+    REG1C_VBUS_ADC0 = 0x1C,
+    REG1B_VBAT_ADC1 = 0x1D,
+    REG1C_VBAT_ADC0 = 0x1E,
+    REG1F_VCELLTOP_ADC1 = 0x1F,
+    REG20_VCELLTOP_ADC0 = 0x20,
+    REG21_TS_ADC1 = 0x21,
+    REG22_TS_ADC0 = 0x22,
+    REG23_TDIE_ADC1 = 0x23,
+    REG24_TDIE_ADC0 = 0x24,
+    REG25_PARTINFO = 0x25,
+    REG26_VCELLBOT_ADC1 = 0x26,
+    REG27_VCELLBOT_ADC0 = 0x27,
+    REG28_BAL_CTL1 = 0x28,
+    REG29_BAL_CTL2 = 0x29,
+    REG2A_BAL_STATUS = 0x2A,
+    REG2B_BAL_FLAG = 0x2B,
+    REG2B_BAL_MASK = 0x2C
+};
+
+
+enum REG2B_BAL_MASK_VALUES {
+    CB_MASK = 0x20,
+    HS_CV_MASK = 0x10,
+    LS_CV_MASK = 0x08,
+    HS_OV_MASK = 0x04,
+    LS_OV_MASK = 0x02,
+    CB_OC_MASK = 0x01
+};
+
+typedef union {
+    uint8_t {
+        uint8_t reserved:2,
+        uint8_t CB_MASK:1,
+        uint8_t HS_CV_MASK:1,
+        uint8_t LS_CV_MASK:1,
+        uint8_t HS_OV_MASK:1,
+        uint8_t LS_OV_MASK:1,
+        uint8_t CB_OC_MASK:1
+    } bits,
+    uint8_t reg;
+} REG2B_BAL_MASK_TYPE;
+
+
+
+
+
+#endif
