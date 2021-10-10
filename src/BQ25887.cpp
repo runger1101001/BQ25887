@@ -47,7 +47,7 @@ void BQ25887::writeI2C(uint8_t reg, uint8_t value){
 // mV, 3.40V to 4.60V, step is 5mV
 uint16_t BQ25887::getVCellReg(){
     uint16_t result = readI2C(BQ25887_REGISTERS::REG00_VCELLREG)<<8;
-    return result & readI2C(BQ25887_REGISTERS::REG00_VCELLREG);
+    return result * 5.0f;
 };
 
 void BQ25887::setChargeCurrentLimit(REG01_ICHG_TYPE value){
